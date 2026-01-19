@@ -1,7 +1,8 @@
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
 import './App.css'
 
+import CountDisplay from './components/CountDisplay';
+import CountMange from './components/CountMange';
 function App() {
 
   let [count, setCount] = useState(0);
@@ -9,10 +10,14 @@ function App() {
   let [name, setName] = useState("");
 
   let [formData, setFormData] = useState({
-    name:"",
-    email:""
+    name: "",
+    email: "",
+    phone: ""
   });
 
+  const incrementFn = () => { setCount(count + 1) }
+  const decrementFn = () => { setCount(count - 1) }
+  const resetFn = () => { setCount(0) }
 
   // let count = 0;
 
@@ -23,7 +28,7 @@ function App() {
   const incrementCount = () => {
 
     // count = count + 1;
-    setCount(count)
+    setCount(count + 1)
     // printName();
     console.log("incrementCount---", count);
   }
@@ -66,22 +71,25 @@ function App() {
     // setEmail("");
     // setName("");
 
-    console.log("formdata------",formData);
+    console.log("formdata------", formData);
   }
 
- 
 
- const handleChange = (event) => {
-  const { name, value } = event.target;
 
-  console.log("name:", name);
-  console.log("value:", value);
+  const handleChange = (event) => {
 
-  setFormData((prev) => ({
-    ...prev,
-    [name]: value
-  }));
-};
+    console.log("event.target----", event);
+    const { name, value } = event.target;
+
+    console.log("name:", name);
+    console.log("value:", value);
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
 
 
   return (
@@ -142,31 +150,49 @@ function App() {
     // </form>
 
 
+    //  <form onSubmit={handleSubmitFrom}>
+    //   <div>
+    //     <label htmlFor="name">Name:</label>
+    //     <input
+    //       type="text"
+    //       id="name"
+    //       name="name"
+    //       value={formData.name}
+    //       onChange={handleChange}
+    //     />
+    //     <br />
+    //     <label htmlFor="email">Email:</label>
+    //     <input
+    //       type="text"
+    //       id="email"
+    //       name="email"
+    //       value={formData.email}
+    //       onChange={handleChange}
+    //     />
+    //     <br />
+    //     <label htmlFor="phone">Phone:</label>
+    //     <input
+    //       type="text"
+    //       id="phone"
+    //       name="phone"
+    //       value={formData.phone}
+    //       onChange={handleChange}
+    //     />
+    //   </div>
+    //   <button type="submit">Submit</button>
+    // </form>
 
-
-
-     <form onSubmit={handleSubmitFrom}>
-      <div>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        <br />
-        <label htmlFor="email">Email:</label>
-        <input
-          type="text"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <>
+      <h1>App.js main file</h1>
+      <CountDisplay
+        count={count}
+        incrementFn={incrementFn}
+        decrementFn={decrementFn}
+        resetFn={resetFn} />
+      <CountMange count={count} incrementFn={incrementFn}
+        decrementFn={decrementFn}
+        resetFn={resetFn}/>
+    </>
   )
 }
 
