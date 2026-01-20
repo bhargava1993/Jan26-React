@@ -105,5 +105,11 @@ updation        update
 Die             unmount
 
 
+routing: (Navigation) / redirection
+-----------------------------------
 
+ client                     server
 
+ npm i react-router-dom
+
+BrowserRouter --> main.jsx -> you  need to wrap your main component (<app />)
