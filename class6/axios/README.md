@@ -18,77 +18,20 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 
-props drilldown -->problem
 
-app(top floor)  --> {name: "venu"}
-|
-3rd floor
-|
-2nd floor
-|
-1st floor
-|
-ground floor --> name: venu
+Axios:
+------
 
+browser(frontend)  --> backend(api)
 
-contextApi --> centralized state management system
-redux/thunk
-zustand
+http:  GET, POST, PUT, DELETE
 
+fetch() api:
 
-app 
+axios:
 
-class 1
-
-class 2 ---------------->  notice board -> {name: "venu"}
-
-class 3
-
-class 4 --> name: venu
-
-
-
-props drilldown:
-----------------
-
-context api:
--------------
-
-1. React
-React.createConext();
-
-imprort {createConext } from "React";
-
-2. <Provider   value={data}>
-    app.js
-
-3. useContext()
-
-
-create
-store
-use
-
-
-employee management system:
-----------------------------
-table --> employee details
-
-create employee
-fetch employee
-display in table
-update employee
-delete employee
-
-search employee ---> array.filter()
-sort employee ---> array.sort()
-
-Avinash
-Bhargava
-Sudheer
-Venu
-Zaiba
-
-
+QUERY
+HEADERS
+REQ.BODY
 
 
