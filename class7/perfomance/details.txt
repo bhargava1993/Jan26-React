@@ -1,0 +1,35 @@
+React perf and rendaring:
+-------------------------
+
+bulnding tools:
+-----------
+webpack
+vite --->javscript es6
+
+
+react performance and rendaring:
+--------------------------------
+1. code splitting
+2. dynamic imports
+3. lazy loading
+4. react lazy
+5. react Suspence (falling ui)
+
+
+
+Memoization:
+------------
+1. React.memo (components)
+2. useMemo
+3. useCallback
+
+
+
+Build command:
+--------------
+npm run build
+
+serve -s dist
+
+
+
